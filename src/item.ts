@@ -1,7 +1,10 @@
+import { IsNumber, IsOptional, IsString } from "class-validator";
+
+
 export class Item {
-    readonly id: number;
-  readonly name: string;
-  readonly price: number;
-  readonly description: string;
-  readonly image: string;
+  @IsNumber() @IsOptional() readonly id: number;
+  @IsString() readonly name: string;
+  @IsNumber() readonly price: number;
+  @IsString() readonly description: string;
+  @IsString() readonly image: string;
 }
